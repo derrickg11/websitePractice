@@ -56,8 +56,8 @@
                     </thead>
                     <tbody>
                         <tr class="compImages">
-                            <td><img src="/websitePractice/images/Jeremy_Meeks_Mug_Shot.jpg" alt=""></td>
-                            <td><img src="/websitePractice/images/img020.JPG" alt=""></td>
+                            <td><img id="toggleMusic" src="/websitePractice/images/Jeremy_Meeks_Mug_Shot.jpg" alt=""></td>
+                            <td><img id="toggleMusic" src="/websitePractice/images/img020.JPG" alt=""></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -222,7 +222,7 @@
                     Website: Derrick Gladwell production
                 </p>
             </div>
-            <audio src="/websitePractice/music/Melly Mike - Young Black & Rich (Official Music Video).mp3" autoplay controls loop></audio>
+            <audio id="bgMusic" src="/websitePractice/music/Melly Mike - Young Black & Rich (Official Music Video).mp3" autoplay controls loop></audio>
         </div>
         
     </footer>
@@ -230,6 +230,18 @@
   document.getElementById("survey").addEventListener("submit", function(event) {
     event.preventDefault();
     alert("This wasn't real");
+  });
+</script>
+<script>
+  const music = document.getElementById("bgMusic");
+  const image = document.getElementById("toggleMusicImage");
+
+  image.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
   });
 </script>
 
